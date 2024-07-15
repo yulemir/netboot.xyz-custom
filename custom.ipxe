@@ -2,11 +2,23 @@
 ###
 ### netboot.xyz-custom menu
 ###
-
-:start
-echo Hello world!
-sleep 10
+:custom
+clear custom_choice
+menu Centos
+item --gap This is the first sub menu
+item option_one ${space} Centos7
+choose custom_choice || goto custom_exit
+echo ${cls}
+goto ${custom_choice}
 goto custom_exit
 
+:option_one
+kernel https://vault.centos.org/7.9.2009/os/x86_64/isolinux/vmlinuz
+initrd https://vault.centos.org/7.9.2009/os/x86_64/isolinux/initrd.img
+imgargs vmlinuz put_kernel_img_args_here
+boot || goto custom_exit
+
+
 :custom_exit
-exit 0
+chain utils.ipxe
+exit

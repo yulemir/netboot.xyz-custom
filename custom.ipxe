@@ -16,7 +16,7 @@ goto ${custom_choice}
 goto custom_exit
 
 :option_one
-kernel https://vault.centos.org/7.9.2009/os/x86_64/images/pxeboot/vmlinuz inst.repo=${repo} $inst.graphical ${ipparam} {initrd=initrd.magic ${cmdline}}
+kernel https://vault.centos.org/7.9.2009/os/x86_64/images/pxeboot/vmlinuz inst.graphical ${ipparam} {initrd=initrd.magic ${cmdline}}
 initrd https://vault.centos.org/7.9.2009/os/x86_64//images/pxeboot/initrd.img
 boot || goto custom_exit
 

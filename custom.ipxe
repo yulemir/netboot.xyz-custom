@@ -1,6 +1,6 @@
 #!ipxe
 
-menu Centos 7
+menu Centos 7 1.1
 item centos7-setup CentOS 7
 item 
 item ipxeshell iPXE Shell

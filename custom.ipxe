@@ -2,6 +2,11 @@
 ###
 ### netboot.xyz-custom menu
 ###
+isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none nameserver=${dns}
+set ipparam BOOTIF=${netX/mac} ${ipparam}
+set install_mode inst.graphica
+set repo https://vault.centos.org/7.9.2009/os/x86_64/
+
 :custom
 clear custom_choice
 menu Centos
@@ -13,9 +18,8 @@ goto ${custom_choice}
 goto custom_exit
 
 :option_one
-kernel https://vault.centos.org/7.9.2009/os/x86_64/images/pxeboot/vmlinuz
-initrd https://vault.centos.org/7.9.2009/os/x86_64/images/pxeboot/initrd.img
-imgargs vmlinuz initrd.img
+kernel ${centos_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${repo} ${install_mode} ${params} ${ipparam} {{ kernel_params }}
+initrd ${centos_mirror}/${dir}/images/pxeboot/initrd.img
 boot || goto custom_exit
 
 

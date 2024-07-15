@@ -9,7 +9,7 @@ choose os && goto ${os}
 
 :ipxeshell
 shell
-
+ 
 :centos7-setup
 set base https://vault.centos.org/7.9.2009/os/x86_64/
 prompt -k 0x197e -t 2000 Press F12 to install CentOS... || exit

@@ -3,7 +3,7 @@
 ### netboot.xyz-custom menu
 ###
 isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none nameserver=${dns}
-set ipparam BOOTIF=${netX/mac} ${ipparam}
+set ipparam BOOTIF=${netX/mac} ${ipparam} 
 
 :custom
 clear custom_choice

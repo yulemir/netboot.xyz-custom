@@ -14,5 +14,5 @@ shell
 set base https://vault.centos.org/7.9.2009/os/x86_64/
 prompt -k 0x197e -t 2000 Press F12 to install CentOS... || exit
 kernel ${base}/images/pxeboot/vmlinuz initrd=initrd.img repo=${base} 
-initrd ${base}/images/pxeboot/initrd.img devfs=nomount
+initrd ${base}/images/pxeboot/initrd.img 
 boot || read void

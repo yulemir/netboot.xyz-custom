@@ -2,7 +2,6 @@
 ###
 ### netboot.xyz-custom menu
 ###
-kernel_params: initrd=initrd.magic ${cmdline}
 isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none nameserver=${dns}
 set ipparam BOOTIF=${netX/mac} ${ipparam}
 set install_mode inst.graphica
@@ -19,7 +18,7 @@ goto ${custom_choice}
 goto custom_exit
 
 :option_one
-kernel ${centos_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${repo} ${install_mode} ${params} ${ipparam} {{ kernel_params }}
+kernel ${centos_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${repo} ${install_mode} ${params} ${ipparam} {initrd=initrd.magic ${cmdline}}
 initrd ${centos_mirror}/${dir}/images/pxeboot/initrd.img
 boot || goto custom_exit
 

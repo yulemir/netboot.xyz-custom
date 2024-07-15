@@ -12,6 +12,6 @@ shell
  
 :centos7-setup
 set base https://vault.centos.org/7.9.2009/os/x86_64/
-kernel ${base}/images/pxeboot/vmlinuz initrd=initrd.img repo=${base} root=/dev/ram0
-initrd ${base}/images/pxeboot/initrd.img  root=/dev/ram0
+kernel ${base}/images/pxeboot/vmlinuz initrd=initrd.img repo=${base} 
+initrd ${base}/images/pxeboot/initrd.img  
 boot || read void

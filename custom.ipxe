@@ -11,7 +11,7 @@ choose os && goto ${os}
 shell
  
 :centos7-setup
-set base https://vault.centos.org/7.9.2009/os/x86_64/
+set base https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/
 kernel ${base}/images/pxeboot/vmlinuz initrd=initrd repo=${base} 
 initrd ${base}/images/pxeboot/initrd.img 
 boot || read void

@@ -13,9 +13,9 @@ goto ${custom_choice}
 goto custom_exit
 
 :option_one
-kernel https://vault.centos.org/7.9.2009/os/x86_64/isolinux/vmlinuz
-initrd https://vault.centos.org/7.9.2009/os/x86_64/isolinux/initrd.img
-imgargs vmlinuz vga=788 console=ttyS0,115200n8 console=tty0
+kernel https://vault.centos.org/7.9.2009/os/x86_64/images/pxeboot/vmlinuz
+initrd https://vault.centos.org/7.9.2009/os/x86_64/images/pxeboot/initrd.img
+imgargs vmlinuz initrd.img
 boot || goto custom_exit
 
 

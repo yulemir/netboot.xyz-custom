@@ -1,7 +1,7 @@
 #!ipxe
 isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none nameserver=${dns}
 set ipparam BOOTIF=${netX/mac} ${ipparam}
-menu Centos 7 1.90
+menu Centos 7 1.91
 item centos7-setup CentOS 7
 item ipxeshell iPXE Shell
  

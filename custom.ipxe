@@ -12,7 +12,7 @@ shell
  
 :centos7-setup
  
-set base-url http://vault.centos.org/centos/7/os/x86_64
+set base-url https://linuxsoft.cern.ch/centos-vault/centos/7/os/x86_64
 kernel ${base-url}/images/pxeboot/vmlinuz initrd=initrd.magic inst.repo=${base-url} ${ipparam} rd.break
 initrd ${base-url}/images/pxeboot/initrd.img
 echo

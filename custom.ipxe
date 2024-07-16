@@ -1,7 +1,7 @@
 #!ipxe
 isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none nameserver=${dns}
 set ipparam BOOTIF=${netX/mac} ${ipparam}
-menu Centos 7 1.95
+menu Centos 7 1.96
 item centos7-setup CentOS 7
 item ipxeshell iPXE Shell
 
@@ -13,7 +13,7 @@ shell
 :centos7-setup
  
 set base-url http://vault.centos.org/centos/7/os/x86_64
-initrd initrd.img
+
 kernel ${base-url}/images/pxeboot/vmlinuz initrd=initrd.img inst.repo=${base-url} ${ipparam} rd.break
 initrd ${base-url}/images/pxeboot/initrd.img initrd=initrd.magic
 initrd ${base-url}/centos7_${archl}.squash

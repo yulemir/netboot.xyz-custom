@@ -9,7 +9,7 @@ choose os && goto ${os}
 
 :ipxeshell
 shell
- 
+  
 :centos7-setup
  
 set base-url http://vault.centos.org/centos/7/os/x86_64

@@ -4,7 +4,7 @@ set ipparam BOOTIF=${netX/mac} ${ipparam}
 menu Centos 7 1.92
 item centos7-setup CentOS 7
 item ipxeshell iPXE Shell
-  
+
 choose os && goto ${os}
 
 :ipxeshell

@@ -11,9 +11,8 @@ choose os && goto ${os}
 shell
  
 :centos7-setup
-dhcp
 
 set base-url https://vault.centos.org/7.9.2009/os/x86_64
-kernel ${base-url}/images/pxeboot/vmlinuz initrd=initrd.img inst.repo=${base-url}
+kernel ${base-url}/images/pxeboot/vmlinuz initrd=initrd.img inst.repo=${base-url} rd.debug rd.shell
 initrd ${base-url}/images/pxeboot/initrd.img
 boot

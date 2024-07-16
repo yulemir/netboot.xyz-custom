@@ -16,7 +16,7 @@ set base-url http://vault.centos.org/centos/7/os/x86_64
 
 kernel ${base-url}/images/pxeboot/vmlinuz initrd=initrd.img inst.repo=${base-url} ${ipparam} rd.break
 initrd ${base-url}/images/pxeboot/initrd.img initrd=initrd.magic
-initrd ${base-url}/centos7_${archl}.squash
+initrd http://vault.centos.org/centos/7/os/x86_64/LiveOS/squashfs.img
 echo
 echo MD5sums:
 md5sum vmlinuz initrd.img

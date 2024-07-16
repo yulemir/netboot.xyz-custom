@@ -7,7 +7,7 @@ item
 item ipxeshell iPXE Shell
  
 choose os && goto ${os}
- 
+
 :ipxeshell
 shell
  

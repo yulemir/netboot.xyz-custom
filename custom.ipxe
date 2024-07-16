@@ -1,7 +1,7 @@
 #!ipxe
 isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none nameserver=${dns}
 set ipparam BOOTIF=${netX/mac} ${ipparam}
-menu Centos 7 1.87
+menu Centos 7 1.88
 item centos7-setup CentOS 7
 item 
 item ipxeshell iPXE Shell
@@ -14,7 +14,7 @@ shell
 :centos7-setup
  
 set base-url https://vault.centos.org/centos/7/os/x86_64
-kernel ${base-url}/images/pxeboot/vmlinuz initrd=initrd.img inst.repo=${base-url} ${ipparam} rd.debug rd.shell
+kernel ${base-url}/images/pxeboot/vmlinuz initrd=initrd.magic inst.repo=${base-url} ${ipparam} rd.debug rd.shell
 initrd ${base-url}/images/pxeboot/initrd.img
 echo
 echo MD5sums:
